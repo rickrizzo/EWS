@@ -1,0 +1,32 @@
+{
+  "name": "ews",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "build-css": "./bin/build-css",
+    "watch-css": "./bin/watch-css"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "bootstrap": "^4.0.0-beta",
+    "cheerio": "^1.0.0-rc.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "formidable": "^1.1.1",
+    "jade": "~1.11.0",
+    "jquery": "^3.2.1",
+    "morgan": "~1.8.1",
+    "node-xlsx": "^0.10.0",
+    "nodemailer": "^4.1.0",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "popper.js": "^1.12.5",
+    "request": "^2.81.0",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.12.1"
+  }
+}
