@@ -8,6 +8,9 @@ var request = require('request');
 
 module.exports = {
   upload: function(req, res, next) {
+    if (!fs.existsSync('ews')){
+      fs.mkdirSync('ews');
+    }
     var form = formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
       var oldpath = files.ews.path;
