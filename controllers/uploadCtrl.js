@@ -17,6 +17,9 @@ module.exports = {
         var ews = xlsxCtrl.parseEWS(newpath);
         sent = 0
         ews.forEach(function(student) {
+          if(fields.reason == 'Other Reason') {
+            return
+          }
           if(fields.hallSubsection == 'Barton A') {
             if (student['room'] % 1000 >= 300) {
               return;
