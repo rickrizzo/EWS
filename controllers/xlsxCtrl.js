@@ -10,9 +10,9 @@ module.exports = {
         students.push({
           'name': row[0].replace(/.*, /, ''),
           'reason': row[1],
-          'hall': row[4],
-          'room': row[5],
-          'email': row[6]
+          'hall': row[7],
+          'room': row[8],
+          'email': row[9]
         });
       }
     });
