@@ -16,7 +16,7 @@ module.exports = {
     return transporter.sendMail({
       from: username + '@rpi.edu',
       to: address,
-      subject: 'EWS Follow Up',
+      subject: 'Checking In',
       html: content
     }, function(error, info){
       if (error) {
