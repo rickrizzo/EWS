@@ -6,15 +6,31 @@ module.exports = {
     var buffer = xlsx.parse(fs.readFileSync(path));
     var students = [];
     var emails = new Set();
+    var indexes = {
+      'name': -1,
+      'reason': -1,
+      'hall': -1,
+      'room': -1,
+      'email': -1
+    }
     buffer[0].data.forEach(function(row, index) {
+      if (index == 0) {
+        row.forEach(function(col, index) {
+          if (col.toLowerCase() in indexes) {
+            indexes[col.toLowerCase()] = index
+          }
+          if (col.toLowerCase() == 'warning') { indexes['reason'] = index; }
+          if (col.toLowerCase() == 'residence hall') { indexes['hall'] = index; }
+        });
+      }
       if (index > 0 && !emails.has(row[9])) {
-        emails.add(row[9]);
+        emails.add(row[indexes['email']]);
         student = {
-          'name': row[0].replace(/.*, /, ''),
-          'reason': row[1],
-          'hall': row[7],
-          'room': row[8],
-          'email': row[9]
+          'name': row[indexes['name']].replace(/.*, /, ''),
+          'reason': row[indexes['reason']],
+          'hall': row[indexes['hall']],
+          'room': row[indexes['room']],
+          'email': row[indexes['email']]
         };
         students.push(student);
       }

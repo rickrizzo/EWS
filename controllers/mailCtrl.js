@@ -17,6 +17,7 @@ module.exports = {
       from: username + '@rpi.edu',
       to: address,
       subject: 'Checking In',
+      bcc: username + '@rpi.edu',
       html: content
     }, function(error, info){
       if (error) {

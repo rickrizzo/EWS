@@ -22,7 +22,9 @@ module.exports = {
             return;
           }
         }
-        var emailContent = '<p>Hello ' + student['name'] + ',</p><p>' + fields.emailContent + '</p><p>Best,<br>LA ' + fields.name + '</p>';
+        var emailContent = '<p>Hello ' + student['name'] + ',</p>' +
+                           '<p>' + fields.emailContent + '</p>' +
+                           '<p>Best,<br>LA ' + fields.name + '</p>';
         mailCtrl.sendMail(student['email'], emailContent, fields.username, fields.password);
         sent += 1;
       });
