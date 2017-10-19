@@ -1,6 +1,5 @@
 // Default Email Body
-var defaultEmail = "I received an email regarding your recent EWS and wanted to " +
-              "follow up with you to see how things are going. I know freshmen " +
+var defaultEmail = "I wanted to check in and see how things are going. I know freshmen" +
               " year can be a big transition and I'd like you to stop by my " +
               "office hours so we can touch base. As your LA I want to do " +
               "whatever I can to make sure you're performing at your absolute " +
