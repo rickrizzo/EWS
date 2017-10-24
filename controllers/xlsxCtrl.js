@@ -19,11 +19,12 @@ module.exports = {
           if (col.toLowerCase() in indexes) {
             indexes[col.toLowerCase()] = index
           }
+          if (col.toLowerCase() == 'room number') { indexes['room'] = index; }
           if (col.toLowerCase() == 'warning') { indexes['reason'] = index; }
           if (col.toLowerCase() == 'residence hall') { indexes['hall'] = index; }
         });
       }
-      if (index > 0 && !emails.has(row[9])) {
+      if (index > 0 && !emails.has(row[indexes['email']])) {
         emails.add(row[indexes['email']]);
         student = {
           'name': row[indexes['name']].replace(/.*, /, ''),

@@ -22,6 +22,11 @@ module.exports = {
             return;
           }
         }
+        if(fields.hallSubsection == 'BARH D Wing + 3rd Floor A') {
+          // CHECK CONTAINS D, CONTAINS A
+          // IF CONTAINS D, GOOD
+          // IF CONTAINS A, AND NUMBERS >= 300, GOOD
+        }
         var emailContent = '<p>Hello ' + student['name'] + ',</p>' +
                            '<p>' + fields.emailContent + '</p>' +
                            '<p>Best,<br>LA ' + fields.name + '</p>';
